@@ -7,25 +7,26 @@
 const express = require('express');
 
 
-const { ProblemController } = require('../../controllers/index')//no ned to write index
+const { problemController } = require('../../controllers/index')//no ned to write index
 const problemRouter = express.Router();
 
+//if any request comes and routes starts with /problems, we map it to problemRouter
 
-problemRouter.get('/', ProblemController.getProblems);
+problemRouter.get('/', problemController.getProblems);
 
-problemRouter.get('/ping', ProblemController.pingProblemController);
-
-
-problemRouter.get('/:id', ProblemController.getProblem);
+problemRouter.get('/ping', problemController.pingProblemController);
 
 
-problemRouter.post('/', ProblemController.addProblem);
+problemRouter.get('/:id', problemController.getProblem);
 
 
-problemRouter.delete('/:id', ProblemController.deleteProblem);
+problemRouter.post('/', problemController.addProblem);
 
 
-problemRouter.put('/:id', ProblemController.updateProblem);
+problemRouter.delete('/:id', problemController.deleteProblem);
+
+
+problemRouter.put('/:id', problemController.updateProblem);
 
 
 module.exports = problemRouter
