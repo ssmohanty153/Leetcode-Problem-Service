@@ -1,7 +1,7 @@
 {
   "name": "leetcode-problem-service",
   "version": "1.0.0",
-  "description": "LeetCode Service",
+  "description": "This is an admin service to manage problems of the Leetcode like platform",
   "main": "index.js",
   "scripts": {
     "dev": "npx nodemon src/index.js"
